@@ -26,7 +26,7 @@ async def upload_file(file: UploadFile = None):
         return {"message": "Please upload a PDF file"}
     
     try:
-        data=await ingest_pdf(file)
-        return {"message": data}
+        embeddings=await ingest_pdf(file)
+        return {"message": embeddings}
     except Exception as e:
         return {"message": f"Error processing file: {str(e)}"}
